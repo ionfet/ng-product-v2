@@ -59,7 +59,7 @@ Přidat responzivní přepisy pro `h2`:
 
 ```css
 @media (max-width: 1440px) {
-  h2:not(.secondary):not(.wp-block-heading):not(.h1) { font-size: var(--font-size-35); line-height: 48px; }
+  h2:not(.secondary):not(.wp-block-heading):not(.h1) { font-size: var(--font-size-35); line-height: var(--line-height-38); }
 }
 ```
 
