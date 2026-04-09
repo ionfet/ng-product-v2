@@ -59,7 +59,7 @@ Přidat responzivní přepisy pro `h2`:
 
 ```css
 @media (max-width: 1440px) {
-  h2:not(.secondary):not(.wp-block-heading):not(.h1) { font-size: var(--font-size-35); line-height: var(--line-height-38); }
+  h2:not(.secondary):not(.wp-block-heading):not(.h1) { font-size: var(--font-size-32); line-height: 42px; }
 }
 ```
 
@@ -73,7 +73,7 @@ Selektor `h2:not(.secondary):not(.wp-block-heading):not(.h1)` cílí pouze na b�
 | Breakpoint | h1 | h2 | h2.secondary | h3.secondary |
 |---|---|---|---|---|
 | Desktop | 60 px | 45 px | 32 px | 30 px |
-| @1440px a mensi | 45 px | 35 px (line-height: 48px) | 25 px | 24 px |
+| @1440px a mensi | 45 px | 32 px (line-height: 42px) | 25 px | 24 px |
 
 > **Poznámka:** Ověřit, že změna neovlivní nadpisy na ostatních stránkách webu (homepage, blog apod.). Pokud ano, zúžit selektor na `.product h2` nebo použít `:not(.wp-block-heading)`.
 

@@ -20,7 +20,7 @@ html, body {
    Desktop 45px is already correct; override only smaller breakpoints */
 @media (max-width: 1440px) {
   h2:not(.secondary):not(.wp-block-heading):not(.h1) {
-    font-size: var(--font-size-35);
-    line-height: var(--line-height-38);
+    font-size: var(--font-size-32);
+    line-height: 42px;
   }
 }
