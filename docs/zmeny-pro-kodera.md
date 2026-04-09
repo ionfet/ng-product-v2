@@ -130,3 +130,30 @@ Přijímáme: [Apple Pay] [GPay] [MC] [Visa]
   </div>
 </div>
 ```
+
+---
+
+## 4. Nejednotný `padding-top` sekcí napříč breakpointy (celý web)
+
+### Problém
+
+Sekce na webu používají různé mechanismy pro horní spacing a mění se na různých breakpointech. Všechny začínají na 90px a končí na 60px, ale přechod nastává na jiném breakpointu:
+
+| Sekce | Stránka | Mechanismus | Desktop | @1440px | @1024px | @768px |
+|---|---|---|---|---|---|---|
+| Většina sekcí | všechny | `.section-spacing` | 90px | 90px | **→ 60px** | 60px |
+| Slideshow headline | homepage | `.slideshow .container h2` (hardcoded) | 90px | **→ 60px** | 60px | 60px |
+| How-to | homepage | `.how-to .inner-container` (hardcoded) | 90px | 90px | 90px | **→ 60px** |
+| Product Info | produkt | `.product-info` (hardcoded) | **60px** | 60px | 60px | 60px |
+
+### Doporučení
+
+Sjednotit na jeden breakpoint — ideálně **@1024px** přes třídu `.section-spacing`, protože ji už většina sekcí používá.
+
+Sekce s vlastním hardcoded `padding-top` by měly přejít na `.section-spacing`:
+- `.slideshow .container h2` — nahradit hardcoded 90px/60px za `.section-spacing` třídu (nebo sjednotit breakpoint na @1024px)
+- `.how-to .inner-container` — totéž, breakpoint posunout z @768px na @1024px
+
+Výjimka: `.product-info` s 60px je záměrně menší (je to sticky sidebar, ne plná sekce) — neměnit.
+
+> **Poznámka:** Před úpravou ověřit vizuálně na všech stránkách. Změna breakpointu z @1440px na @1024px u slideshow znamená, že heading bude mít 90px padding déle (na tabletové šířce).
