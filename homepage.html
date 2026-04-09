@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NoGray's — Homepage Prototype</title>
+  <meta name="description" content="Dva přípravky, jedna revoluce. NoGray's pro muže i ženy šetrně obnovuje přirozenou barvu vlasů, redukuje mastnotu a předchází tvorbě lupů.">
+
+  <!-- Fonts (Google Fonts, remote) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <!-- Theme CSS (remote, from nograys.cz) -->
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/reset.css?ver=1.3.0">
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/style.css?ver=1.3.0">
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/gallery.css?ver=1.3.0">
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/twentytwenty.css?ver=1.3.0">
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/video-sidebar.css?ver=1.13">
+
+  <!-- Swiper CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Minimal inline styles from original WP -->
+  <style>
+    img:is([sizes=auto i],[sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px; }
+    .woocommerce-product-gallery { opacity: 1 !important; }
+  </style>
+
+  <!-- Custom CSS (from original wp-custom-css) -->
+  <style id="wp-custom-css">
+    html, body {
+      overflow-x: clip;
+    }
+    :is(.blog, .archive, .search) h2.blog-card__title.h3.secondary {
+      font-size: var(--font-size-24);
+    }
+    @media (max-width: 640px) {
+      h2.wp-block-heading.secondary,
+      [class^="wp-block-"] .h2.secondary,
+      [class*=" wp-block-"] .h2.secondary {
+        font-size: var(--font-size-22);
+      }
+    }
+    h3.wp-block-heading.secondary,
+    [class^="wp-block-"] .h3.secondary,
+    [class*=" wp-block-"] .h3.secondary {
+      font-size: var(--font-size-24);
+      margin-top: 35px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1440px) {
+      h3.wp-block-heading.secondary,
+      [class^="wp-block-"] .h3.secondary,
+      [class*=" wp-block-"] .h3.secondary {
+        font-size: var(--font-size-20);
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+    }
+    @media (max-width: 640px) {
+      h3.wp-block-heading.secondary,
+      [class^="wp-block-"] .h3.secondary,
+      [class*=" wp-block-"] .h3.secondary {
+        font-size: var(--font-size-18);
+      }
+    }
+    @media (max-width: 320px) {
+      h3.wp-block-heading.secondary,
+      [class^="wp-block-"] .h3.secondary,
+      [class*=" wp-block-"] .h3.secondary {
+        font-size: var(--font-size-18);
+      }
+    }
+    ul.wp-block-list, ol.wp-block-list {
+      margin: 10px 0 10px 0;
+    }
+    .major-result-description { max-width: 650px; }
+    .ours-products .categories .category .category-image img { height: 510px; }
+  </style>
+
+  <!-- LOCAL: Override CSS for your redesign changes -->
+  <link rel="stylesheet" href="override.css">
+
+  <!-- Favicon (remote) -->
+  <link rel="icon" href="https://nograys.cz/wp-content/uploads/2025/05/cropped-cropped-Favicon-32x32.jpg" sizes="32x32">
+</head>
+
+<body class="home wp-singular wp-theme-nograys woocommerce-js has-top-bar">
+
+<!-- ======== TOP BANNER ======== -->
+<div class="top-banner" id="topBanner">
+  <div class="top-banner__content">
+    <span class="top-banner__text-mobile">Sleva </span>
+    <span class="top-banner__text-desktop">Zaregistruj se a získej slevu </span>
+    10 % na první nákup.
+    <a href="https://nograys.cz/muj-ucet/" class="top-banner__link">Registrovat se &#10141;</a>
+  </div>
+  <button class="top-banner__close" id="bannerClose" aria-label="Zavřít banner">&times;</button>
+</div>
+
+<!-- ======== HEADER ======== -->
+<header class="header">
+  <div class="header__container">
+    <nav class="header__nav">
+      <ul class="header__menu-list">
+        <li class="header__menu-item">
+          <a href="https://nograys.cz/produkt/nograys-125-ml" class="header__menu-link">Náš produkt</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="https://nograys.cz/o-nas/" class="header__menu-link">O Nás</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="https://nograys.cz/blog/" class="header__menu-link">Blog</a>
+        </li>
+      </ul>
+      <button class="header__mobile-menu-button clean" id="mobile-menu-button">Menu</button>
+    </nav>
+
+    <div class="header__logo">
+      <a href="https://nograys.cz">
+        <img src="https://nograys.cz/wp-content/uploads/2025/05/logo.svg" alt="Nograys Logo">
+      </a>
+    </div>
+
+    <div class="header__actions">
+      <div class="header__basket">
+        <a href="https://nograys.cz/muj-ucet/" class="header__basket-link header__basket-link--hide-mobile">Můj účet</a>
+        <a href="https://nograys.cz/kosik/" class="header__basket-link">Košík <span class="header__basket-count">0</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__mobile-menu" id="mobile-menu">
+    <div class="header__mobile-menu-content">
+      <nav class="header__mobile-menu-nav">
+        <ul class="header__mobile-menu-list">
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/produkt/nograys-125-ml" class="header__mobile-menu-link">Náš produkt</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/o-nas/" class="header__mobile-menu-link">O Nás</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/blog/" class="header__mobile-menu-link">Blog</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/muj-ucet/" class="header__mobile-menu-link">Můj účet</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__mobile-menu-socials">
+        <a href="#" class="header__mobile-menu-social-link">Instagram</a>
+        <a href="#" class="header__mobile-menu-social-link">Facebook</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======== MAIN CONTENT ======== -->
+<main>
+
+<!-- ======== HERO (Video) ======== -->
+<div class="max-container">
+  <div class="hero">
+    <div class="hero__container">
+      <!-- Video Sidebar in Hero (replaced with placeholder) -->
+      <div class="hero__video-container">
+        <div class="video-sidebar" data-desktop-video-url="https://nograys.cz/wp-content/uploads/2025/09/Nograys-web-video-3_5.mp4"
+          data-mobile-video-url="https://nograys.cz/wp-content/uploads/2025/09/Nograys-vertical-komplet.mp4"
+          data-default-video-url="https://nograys.cz/wp-content/uploads/2025/09/Nograys-web-video-3_5.mp4">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%231a1a1a' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='48' fill='%23666' font-family='sans-serif'%3E%E2%96%B6 Hero Video%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='24' fill='%23555' font-family='sans-serif'%3ENograys product promo%3C/text%3E%3C/svg%3E"
+            alt="Hero video placeholder — Nograys product promotional video"
+            style="width:100%;height:auto;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== CTA SECTION ======== -->
+<section class="max-container">
+  <div class="cta-section">
+    <div class="inner-container">
+      <div class="inner-left">
+        <h1>
+          Navraťte vlasům přirozenou vitalitu
+        </h1>
+        <p>Dva přípravky, jedna revoluce. NoGray's pro muže i ženy šetrně obnovuje&nbsp;přirozenou barvu vlasů, redukuje
+          mastnotu a předchází tvorbě&nbsp;lupů. Výsledky jsou viditelné již za 7 dní.</p>
+        <a href="https://nograys.cz/product/nograys-125-ml/" class="button">
+          Koupit nyní
+        </a>
+      </div>
+      <div class="inner-right">
+        <picture>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='960'%3E%3Crect fill='%23e8e0d8' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='42' fill='%23999' font-family='sans-serif'%3ECTA Section Image%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='22' fill='%23aaa' font-family='sans-serif'%3EProduct bottles on dark background%3C/text%3E%3C/svg%3E"
+            alt="CTA Section — product bottles"
+            fetchpriority="high">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SLIDESHOW ======== -->
+<section class="slideshow">
+  <div class="max-container">
+    <div class="container no-mb">
+      <div class="top-border"></div>
+      <h2 class="h1">
+        Náš inovativní přípravek přináší revoluci v péči o vlasy. Vyvinuli jsme účinnou formuli, která aktivuje
+        přirozené
+        pigmentační procesy vlasů či vousů a navrací jim původní barvu. Šetrné složení zaručuje bezpečné a postupné
+        výsledky.
+      </h2>
+    </div>
+
+    <div class="swiper slideshow-container" id="slideshow">
+      <div class="slideshow-navigation">
+        <button class="slideshow-navigation-button prev">
+          <span class="slideshow-navigation-button-icon">
+            <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/nav_left.svg" alt="Arrow Left">
+          </span>
+        </button>
+        <button class="slideshow-navigation-button next">
+          <span class="slideshow-navigation-button-icon">
+            <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/nav_right.svg" alt="Arrow Right">
+          </span>
+        </button>
+      </div>
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper slideshow-slides">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23e0ddd8' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='28' fill='%23999' font-family='sans-serif'%3ESlideshow 01%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23aaa' font-family='sans-serif'%3ENatural hair restoration%3C/text%3E%3C/svg%3E"
+                alt="Slideshow Item 1 — natural hair restoration">
+            </figure>
+            <div class="slideshow-item-content">
+              <h2 class="secondary">
+                Přirozená obnova
+              </h2>
+              <p>Aktivuje tvorbu melaninu přímo ve vlasových koříncích. Díky enzymatickému složení probíhá obnova
+                barvy
+                postupně a zevnitř.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23d8dde0' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='28' fill='%23999' font-family='sans-serif'%3ESlideshow 02%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23aaa' font-family='sans-serif'%3EGentle formula%3C/text%3E%3C/svg%3E"
+                alt="Slideshow Item 2 — gentle formula">
+            </figure>
+            <div class="slideshow-item-content">
+              <h2 class="secondary">
+                Šetrné složení
+              </h2>
+              <p>Tonikum je pro všechny typy vlasů včetně citlivé pokožky. Na rozdíl od řady jiných přípravků
+                neobsahuje
+                látky jako je olovo, parabeny či umělá barviva.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23dde0d8' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='28' fill='%23999' font-family='sans-serif'%3ESlideshow 03%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23aaa' font-family='sans-serif'%3EEasy application%3C/text%3E%3C/svg%3E"
+                alt="Slideshow Item 3 — easy application">
+            </figure>
+            <div class="slideshow-item-content">
+              <h2 class="secondary">
+                Snadné použití
+              </h2>
+              <p>Praktický aplikátor umožňuje přesné dávkování ke kořínkům. Doporučujeme ranní aplikaci a večerní mytí
+                vlasů</p>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23e0d8dd' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='28' fill='%23999' font-family='sans-serif'%3ESlideshow 04%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23aaa' font-family='sans-serif'%3EVisible results%3C/text%3E%3C/svg%3E"
+                alt="Slideshow Item 4 — visible results">
+            </figure>
+            <div class="slideshow-item-content">
+              <h2 class="secondary">
+                Viditelné výsledky
+              </h2>
+              <p>První změny pozorujte již po 5–7 dnech používání. Pro dlouhodobý efekt stačí později aplikovat 1–2×
+                týdně
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== HOW TO SECTION ======== -->
+<section class="how-to full-width">
+  <div class="background"></div>
+  <div class="max-container">
+    <div class="inner-container align-start top-border">
+      <div class="col">
+        <h2 class="h1 no-mb">
+          Jak správně aplikovat přípravek pro dosažení přirozené barvy vlasů
+        </h2>
+      </div>
+      <div class="col">
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">
+              1
+            </div>
+            <div class="step-content">
+              <h3 class="secondary">
+                Příprava a první aplikace
+              </h3>
+              <p>Před použitím přípravek důkladně protřepejte. Aplikujte na suché nebo mírně vlhké vlasy pomocí
+                aplikátoru
+                - stačí 6-8 stisknutí pro optimální pokrytí celé hlavy.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              2
+            </div>
+            <div class="step-content">
+              <h3 class="secondary">Správná technika nanášení</h3>
+              <p>Jemně vmasírujte přípravek do pokožky hlavy, aby se účinné látky dostaly přímo ke kořínkům vlasů.
+                Dbejte
+                na rovnoměrné rozetření po celé ploše.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              3
+            </div>
+            <div class="step-content">
+              <h3 class="secondary">Doba působení</h3>
+              <p>Po aplikaci nechte přípravek působit minimálně 6 hodin. Během této doby vlasy nemyjte. Doporučujeme
+                ranní aplikaci a večerní mytí vlasů běžným šamponem.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              4
+            </div>
+            <div class="step-content">
+              <h3 class="secondary">Pravidelnost používání</h3>
+              <p>První dva týdny aplikujte přípravek každý den pro nastartování procesu obnovy barvy. Poté stačí
+                udržovací
+                aplikace 3-4 × týdně pro zachování dosaženého výsledku.
+                V případě vousů, z důvodu jejich rychlejšího růstu, doporučujeme aplikovat 1–2 × denně.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- ======== MAJOR RESULTS (Before/After) ======== -->
+<section class="major-results-section">
+  <div class="max-container">
+    <div class="inner section-spacing top-border">
+      <h2 class="h1">Zásadní výsledky už po dvou týdnech péče</h2>
+
+      <p class="major-result-description">NoGray's aktivuje přirozenou pigmentaci vlasů zevnitř. První výsledky zaznamenáte po 5-7 dnech a po 14 dnech pravidelného používání bude evidentní viditelný návrat k vaší původní barvě vlasů, či vousů.</p>
+
+      <div class="major-results-images">
+
+        <!-- Image 1 - Left Side (Before/After men) -->
+        <div id="container1" class="twentytwenty-container">
+          <!-- The before image is first -->
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='966'%3E%3Crect fill='%23d5d5d5' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='36' fill='%23999' font-family='sans-serif'%3EMen — Before%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='22' fill='%23aaa' font-family='sans-serif'%3EGray hair, before treatment%3C/text%3E%3C/svg%3E"
+            alt="Before Image 1 — man with gray hair before treatment">
+          <!-- The after image is last -->
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='966'%3E%3Crect fill='%23c5c5c5' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='36' fill='%23888' font-family='sans-serif'%3EMen — After%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='22' fill='%23999' font-family='sans-serif'%3ENatural color restored%3C/text%3E%3C/svg%3E"
+            alt="After Image 1 — man with natural color restored">
+        </div>
+
+        <!-- Image 2 - Right Side (Before/After women) -->
+        <div id="container2" class="twentytwenty-container">
+          <!-- The before image is first -->
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='966'%3E%3Crect fill='%23d5d5d5' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='36' fill='%23999' font-family='sans-serif'%3EWomen — Before%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='22' fill='%23aaa' font-family='sans-serif'%3EGray hair, before treatment%3C/text%3E%3C/svg%3E"
+            alt="Before Image 2 — woman with gray hair before treatment">
+          <!-- The after image is last -->
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='966'%3E%3Crect fill='%23c5c5c5' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='36' fill='%23888' font-family='sans-serif'%3EWomen — After%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='22' fill='%23999' font-family='sans-serif'%3ENatural color restored%3C/text%3E%3C/svg%3E"
+            alt="After Image 2 — woman with natural color restored">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== OUR PRODUCTS ======== -->
+<section class="ours-products">
+  <div class="max-container">
+    <div class="inner section-spacing top-border">
+      <h2 class="h1">Naše produkty</h2>
+
+      <div class="categories">
+        <div class="category">
+          <div class="category-image">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='510'%3E%3Crect fill='%23d0ccc6' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='32' fill='%23999' font-family='sans-serif'%3EPro mu%C5%BEe%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23aaa' font-family='sans-serif'%3EProduct for men%3C/text%3E%3C/svg%3E"
+              alt="Pro muže — product image for men">
+          </div>
+          <div class="category-bottom">
+            <div class="category-title">
+              <h3 class="secondary">Pro muže</h3>
+            </div>
+            <a href="https://nograys.cz/produkt/nograys-125-ml/?attribute_produkt=pro-muze" class="clean">
+              <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/button.svg" alt="Arrow right">
+            </a>
+          </div>
+        </div>
+        <div class="category">
+          <div class="category-image">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='510'%3E%3Crect fill='%23ccc6d0' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' dominant-baseline='middle' font-size='32' fill='%23999' font-family='sans-serif'%3EPro %C5%BEeny%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23aaa' font-family='sans-serif'%3EProduct for women%3C/text%3E%3C/svg%3E"
+              alt="Pro ženy — product image for women">
+          </div>
+          <div class="category-bottom">
+            <div class="category-title">
+              <h3 class="secondary">Pro ženy</h3>
+            </div>
+            <a href="https://nograys.cz/produkt/nograys-125-ml/?attribute_produkt=pro-zeny" class="clean">
+              <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/button.svg" alt="Arrow right">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======== FOOTER ======== -->
+<footer class="footer">
+  <div class="background"></div>
+  <div class="max-container">
+    <div class="container no-mb">
+      <div class="inner top-border">
+        <div class="left">
+          <div class="item">
+            <h2 class="secondary">Kontakt</h2>
+            <p class="mb">Nogray's s.r.o</p>
+            <address class="mb">
+              <p>Kroftova 10,<br>150 00 Praha,<br>Česká Republika</p>
+            </address>
+            <p><a href="tel:+420773226871">+420 773 226 871</a></p>
+            <p class="mb"><a href="mailto:info@nograys.cz">info@nograys.cz</a></p>
+            <div class="socials">
+              <ul>
+                <li>
+                  <a href="https://www.instagram.com/nogray_s" target="_blank" rel="noopener noreferrer">
+                    <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/instagram.svg" alt="Instagram">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61579695230199" target="_blank" rel="noopener noreferrer">
+                    <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/facebook.svg" alt="Facebook">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <h2 class="secondary">Obchod</h2>
+            <nav>
+              <ul>
+                <li><a href="https://nograys.cz/obchodni-podminky/">Obchodní podmínky</a></li>
+                <li><a href="https://nograys.cz/ochrana-osobnich-udaju/">Zásady ochrany osobních údajů</a></li>
+                <li><a href="https://nograys.cz/co-jsou-soubory-cookies/">Co jsou soubory cookies</a></li>
+                <li><a href="https://nograys.cz/reklamace/">Reklamace a vrácení zboží</a></li>
+                <li><a href="https://nograys.cz/vraceni-zbozi/">Vrácení zboží</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="right">
+          <figure>
+            <img src="https://nograys.cz/wp-content/uploads/2025/05/logo.svg" alt="Logo">
+          </figure>
+        </div>
+      </div>
+      <div class="bottom">
+        <p class="copyright">&copy; 2026 Nogray's.</p>
+        <button type="button" class="clean" id="back-to-top">Nahoru</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======== POPUP ======== -->
+<div class="popup-overlay" id="popupOverlay" style="display:none">
+  <div class="popup-card">
+    <button class="popup-close" id="popupClose" aria-label="Zavřít">&times;</button>
+    <div class="h1 popup-headline popup-headline--tabac">Sleva 10 %</div>
+    <div class="popup-subheadline">na první nákup</div>
+    <p class="popup-description">Zaregistruj se a slevový kód ti pošleme na <span style="white-space:nowrap">e-mail</span>. Platí pro tvou první objednávku.</p>
+    <a class="button popup-cta" href="https://nograys.cz/muj-ucet/">Registrovat se</a>
+  </div>
+</div>
+
+<!-- ======== SCRIPTS ======== -->
+<!-- jQuery (CDN) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Swiper (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- TwentyTwenty before/after slider -->
+<script src="js/jquery.event.move.js"></script>
+<script src="js/jquery.twentytwenty.js"></script>
+<!-- Theme scripts (local) -->
+<script src="js/script.js"></script>
+<script src="js/home.js"></script>
+<script src="js/video-sidebar.js"></script>
+
+<!-- TwentyTwenty init for before/after containers -->
+<script>
+  jQuery(function($) {
+    // Container 1 (Men before/after)
+    if ($("#container1").length) {
+      $("#container1").twentytwenty({
+        before_label: 'Před',
+        after_label: 'Po',
+        no_keyboard_arrow: true,
+        no_dragging: true,
+      });
+    }
+
+    // Container 2 (Women before/after)
+    if ($("#container2").length) {
+      $("#container2").twentytwenty({
+        before_label: 'Před',
+        after_label: 'Po',
+        no_keyboard_arrow: true,
+        no_dragging: true,
+      });
+    }
+  });
+</script>
+</body>
+</html>
