@@ -16,6 +16,44 @@ html, body {
   border-top: 1px solid var(--white-color-light);
 }
 
+/* Before/after blocks: wrapper takes over 50% width from twentytwenty-wrapper */
+.major-results-block {
+  width: 50%;
+}
+
+.major-results-section .major-results-images .twentytwenty-wrapper {
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .major-results-block {
+    width: 100%;
+  }
+}
+
+/* Testimonial styling */
+.major-results-testimonial {
+  margin: 0;
+  padding: var(--spacing-30) 0 0;
+  border: none;
+  max-width: 520px;
+}
+
+.major-results-testimonial p {
+  margin: 0 0 6px;
+  font-size: var(--font-size-16, 16px);
+  line-height: 1.55;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.major-results-testimonial footer {
+  font-size: var(--font-size-14, 14px);
+  opacity: 0.55;
+  font-style: normal;
+}
+
 /* Responsive h2 — fix missing scaling in remote theme CSS
    Desktop 45px is already correct; override only smaller breakpoints */
 @media (max-width: 1440px) {
