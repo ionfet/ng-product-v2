@@ -1,0 +1,12 @@
+/*
+ * NoGray's — Redesign Override CSS
+ *
+ * All original styles load from the live site (nograys.cz).
+ * Add your layout changes here. They will override the remote styles.
+ *
+ * Examples:
+ *
+ * .product-layout { gap: 60px; }
+ * .product-info { max-width: 500px; }
+ * @media (max-width: 768px) { .header { padding: 10px; } }
+ */
