@@ -19,7 +19,7 @@ html, body {
 /* Responsive h2 — fix missing scaling in remote theme CSS
    Desktop 45px is already correct; override only smaller breakpoints */
 @media (max-width: 1440px) {
-  h2:not(.secondary):not(.wp-block-heading) {
+  h2:not(.secondary):not(.wp-block-heading):not(.h1) {
     font-size: var(--font-size-35);
     line-height: 48px;
   }

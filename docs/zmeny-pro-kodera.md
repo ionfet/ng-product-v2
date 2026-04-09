@@ -59,11 +59,14 @@ Přidat responzivní přepisy pro `h2`:
 
 ```css
 @media (max-width: 1440px) {
-  h2, .h2 { font-size: var(--font-size-35); line-height: 48px; }
+  h2:not(.secondary):not(.wp-block-heading):not(.h1) { font-size: var(--font-size-35); line-height: 48px; }
 }
 ```
 
-Selektory `h2, .h2` mají stejnou specificitu jako stávající base rule. Přepisy `.secondary` používají `h2.secondary`, což má vyšší specificitu — nebudou ovlivněny.
+Selektor `h2:not(.secondary):not(.wp-block-heading):not(.h1)` cílí pouze na běžné h2 nadpisy. Vylučuje:
+- `.secondary` — už má vlastní responsive přepisy
+- `.wp-block-heading` — WordPress bloky, vlastní responsive
+- **`.h1`** — elementy jako `<h2 class="h1">` na homepage (slideshow headline), které záměrně používají h1 styling a nesmí se měnit
 
 ### Cílová hierarchie velikostí
 
