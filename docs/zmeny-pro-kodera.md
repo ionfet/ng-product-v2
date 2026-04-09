@@ -1,19 +1,25 @@
-# Sjednocení padding-top sekcí
+# Úprava pro kodéra: sjednotit horní mezery mezi sekcemi
 
-Sekce na webu mají stejný spacing (90px → 60px), ale přechod nastává na různých breakpointech:
+## O co jde
 
-| Sekce | Stránka | Breakpoint změny |
-|---|---|---|
-| `.section-spacing` (většina sekcí) | všechny | @1024px |
-| `.slideshow .container h2` | homepage | @1440px |
-| `.how-to .inner-container` | homepage | @768px |
+Na webu mají všechny hlavní sekce (Key Ingredients, Before/After, How-to atd.) horní mezeru 90px na desktopu, která se zmenší na 60px na menších obrazovkách. To je správně.
 
-Slideshow a How-to na homepage používají vlastní hardcoded `padding-top` místo společné třídy `.section-spacing`.
+Problém je, že ke zmenšení dochází na **různých šířkách obrazovky** podle toho, která sekce to je. Uživatel to vidí tak, že při zmenšování okna se mezery nemění všechny najednou — některé skočí dřív, jiné později.
 
-## Doporučení
+## Co je špatně
 
-Sjednotit na **@1024px** přes `.section-spacing` — buď přidat třídu, nebo sladit breakpointy v CSS.
+Většina sekcí používá třídu `.section-spacing`, která se mění na šířce **1024px**. Ale dvě sekce na homepage mají vlastní CSS s jiným bodem přechodu:
 
-Stránka O nás je OK — všechny sekce už používají `.section-spacing`.
+- **Slideshow nadpis** (`.slideshow .container h2`) — zmenší se už na **1440px**, tedy dřív než ostatní
+- **How-to sekce** (`.how-to .inner-container`) — zmenší se až na **768px**, tedy později než ostatní
 
-`.product-info` má záměrně 60px vždy (sticky sidebar) — neměnit.
+## Co s tím
+
+Obě sekce by se měly chovat stejně jako ostatní — zmenšit se na **1024px**. Buď:
+- Přidat jim třídu `.section-spacing` a odstranit hardcoded `padding-top`
+- Nebo upravit jejich media queries v CSS tak, aby breakpoint byl @1024px
+
+## Kde to ověřit
+
+- **Homepage** (https://nograys.cz/) — slideshow a how-to sekce
+- **Stránka O nás** a **produkt** jsou v pořádku, ty se měnit nemusí
