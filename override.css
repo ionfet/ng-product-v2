@@ -3,10 +3,24 @@
  *
  * All original styles load from the live site (nograys.cz).
  * Add your layout changes here. They will override the remote styles.
- *
- * Examples:
- *
- * .product-layout { gap: 60px; }
- * .product-info { max-width: 500px; }
- * @media (max-width: 768px) { .header { padding: 10px; } }
  */
+
+/* Prevent horizontal overflow from edge-to-edge elements (e.g. mobile gallery) */
+html, body {
+  overflow-x: clip;
+}
+
+/* Shipping info: visual separation from add-to-cart */
+.shipping-info {
+  padding-top: var(--spacing-30);
+  border-top: 1px solid var(--white-color-light);
+}
+
+/* Responsive h2 — fix missing scaling in remote theme CSS
+   Desktop 45px is already correct; override only smaller breakpoints */
+@media (max-width: 1440px) {
+  h2:not(.secondary):not(.wp-block-heading) {
+    font-size: var(--font-size-35);
+    line-height: 48px;
+  }
+}
