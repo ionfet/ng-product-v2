@@ -16,8 +16,8 @@ html, body {
   border-top: 1px solid var(--white-color-light);
 }
 
-/* Before/after blocks: wrapper takes over 50% width from twentytwenty-wrapper */
-.major-results-block {
+/* Before/after blocks: 50% width only inside .major-results-images (homepage, two blocks side by side) */
+.major-results-images .major-results-block {
   width: 50%;
 }
 
@@ -27,7 +27,7 @@ html, body {
 }
 
 @media (max-width: 640px) {
-  .major-results-block {
+  .major-results-images .major-results-block {
     width: 100%;
   }
 }
@@ -52,6 +52,89 @@ html, body {
   font-size: var(--font-size-14, 14px);
   opacity: 0.55;
   font-style: normal;
+}
+
+/* Header: raise mobile menu breakpoint from 840px to 950px (extra nav item "Návod") */
+@media (max-width: 950px) {
+  .header__menu-list,
+  .header__basket-link--hide-mobile {
+    display: none;
+  }
+  .header__mobile-menu-button {
+    display: block;
+  }
+  .header__mobile-menu {
+    display: block;
+  }
+  .header__nav {
+    flex: 0;
+  }
+}
+
+/* Product gallery: compact layout with square main image + small thumbnail row */
+.product .product-layout .product-gallery .main-image {
+  height: auto !important;
+  max-width: 588px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: var(--spacing-20);
+}
+
+.product .product-layout .product-gallery .main-image img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.product .product-layout .product-gallery .gallery-thumbs {
+  display: flex !important;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.product .product-layout .product-gallery .gallery-thumbs .thumb {
+  width: 80px !important;
+  height: 80px !important;
+  max-width: 80px !important;
+  margin-bottom: 0 !important;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+}
+
+.product .product-layout .product-gallery .gallery-thumbs .thumb img {
+  border-radius: 15px !important;
+}
+
+.product .product-layout .product-gallery .gallery-thumbs .thumb.active,
+.product .product-layout .product-gallery .gallery-thumbs .thumb:hover {
+  opacity: 1;
+}
+
+.product .product-layout .product-gallery .gallery-thumbs .thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* Gallery is now compact enough for sticky */
+.product .product-layout .product-gallery {
+  position: sticky;
+  top: 140px;
+  height: fit-content;
+  align-self: flex-start;
+  padding-bottom: 40px;
+}
+
+.product .product-layout .product-info {
+  position: static;
+}
+
+@media (max-width: 768px) {
+  .product .product-layout .product-gallery {
+    position: static;
+  }
 }
 
 /* Responsive h2 — fix missing scaling in remote theme CSS

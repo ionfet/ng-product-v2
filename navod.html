@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Návod — NoGray's</title>
+
+  <!-- Fonts (Google Fonts, remote) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <!-- Theme CSS (remote, from nograys.cz) -->
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/reset.css?ver=1.3.0">
+  <link rel="stylesheet" href="https://nograys.cz/wp-content/themes/nograys/styles/style.css?ver=1.3.0">
+
+  <!-- Minimal inline styles -->
+  <style>
+    img:is([sizes=auto i],[sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px; }
+
+    .navod-intro {
+      margin-bottom: var(--section-spacing-top);
+    }
+
+    @media (min-width: 1441px) {
+      .ours-products .categories .category .category-image img {
+        height: 510px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ours-products .categories .category .category-image img {
+        height: 330px;
+      }
+    }
+  </style>
+
+  <!-- LOCAL: Override CSS -->
+  <link rel="stylesheet" href="override.css">
+
+  <!-- Favicon (remote) -->
+  <link rel="icon" href="https://nograys.cz/wp-content/uploads/2025/05/cropped-cropped-Favicon-32x32.jpg" sizes="32x32">
+</head>
+
+<body class="page wp-singular wp-theme-nograys woocommerce-js">
+
+<!-- ======== HEADER ======== -->
+<header class="header">
+  <div class="header__container">
+    <nav class="header__nav">
+      <ul class="header__menu-list">
+        <li class="header__menu-item">
+          <a href="https://nograys.cz/produkt/nograys-125-ml" class="header__menu-link">Náš produkt</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="/navod/" class="header__menu-link">Návod</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="https://nograys.cz/o-nas/" class="header__menu-link">O Nás</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="https://nograys.cz/blog/" class="header__menu-link">Blog</a>
+        </li>
+      </ul>
+      <button class="header__mobile-menu-button clean" id="mobile-menu-button">Menu</button>
+    </nav>
+
+    <div class="header__logo">
+      <a href="https://nograys.cz">
+        <img src="https://nograys.cz/wp-content/uploads/2025/05/logo.svg" alt="Nograys Logo">
+      </a>
+    </div>
+
+    <div class="header__actions">
+      <div class="header__basket">
+        <a href="https://nograys.cz/muj-ucet/" class="header__basket-link header__basket-link--hide-mobile">Můj účet</a>
+        <a href="https://nograys.cz/kosik/" class="header__basket-link">Košík <span class="header__basket-count">0</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__mobile-menu" id="mobile-menu">
+    <div class="header__mobile-menu-content">
+      <nav class="header__mobile-menu-nav">
+        <ul class="header__mobile-menu-list">
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/produkt/nograys-125-ml" class="header__mobile-menu-link">Náš produkt</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="/navod/" class="header__mobile-menu-link">Návod</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/o-nas/" class="header__mobile-menu-link">O Nás</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/blog/" class="header__mobile-menu-link">Blog</a>
+          </li>
+          <li class="header__mobile-menu-item">
+            <a href="https://nograys.cz/muj-ucet/" class="header__mobile-menu-link">Můj účet</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__mobile-menu-socials">
+        <a href="https://www.instagram.com/nogray_s" class="header__mobile-menu-social-link">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61579695230199" class="header__mobile-menu-social-link">Facebook</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======== MAIN CONTENT ======== -->
+<main class="max-container">
+
+  <!-- Hero / Intro -->
+  <section class="inner section-spacing" style="text-align: center; max-width: 700px; margin: 0 auto; padding-bottom: var(--section-spacing-top-md);">
+    <h1>Návod k použití</h1>
+    <p style="margin-top: var(--spacing-20); opacity: 0.7;">
+      Vyberte si návod podle vašeho produktu. Každý obsahuje podrobný postup aplikace, doporučené dávkování a tipy pro nejlepší výsledky.
+    </p>
+  </section>
+
+  <!-- Cards section — reuses .ours-products pattern -->
+  <section class="ours-products">
+    <div class="max-container">
+      <div class="inner" style="padding-bottom: var(--section-spacing-bottom);">
+
+        <div class="categories">
+          <div class="category">
+            <a href="/navod/pro-muze/" class="clean" style="display: block;">
+              <div class="category-image">
+                <img src="https://nograys.cz/wp-content/themes/nograys/assets/images/p-muzi.webp" alt="Pro muže">
+              </div>
+            </a>
+            <div class="category-bottom">
+              <div class="category-title">
+                <h3 class="secondary">Pro muže</h3>
+              </div>
+              <a href="/navod/pro-muze/" class="clean">
+                <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/button.svg" alt="Arrow right">
+              </a>
+            </div>
+          </div>
+
+          <div class="category">
+            <a href="/navod/pro-zeny/" class="clean" style="display: block;">
+              <div class="category-image">
+                <img src="https://nograys.cz/wp-content/themes/nograys/assets/images/p-zeny.webp" alt="Pro ženy">
+              </div>
+            </a>
+            <div class="category-bottom">
+              <div class="category-title">
+                <h3 class="secondary">Pro ženy</h3>
+              </div>
+              <a href="/navod/pro-zeny/" class="clean">
+                <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/button.svg" alt="Arrow right">
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======== FOOTER ======== -->
+<footer class="footer">
+  <div class="background"></div>
+  <div class="max-container">
+    <div class="container no-mb">
+      <div class="inner top-border">
+        <div class="left">
+          <div class="item">
+            <h2 class="secondary">Kontakt</h2>
+            <p class="mb">Nogray's s.r.o</p>
+            <address class="mb">
+              <p>Kroftova 10,<br>150 00 Praha,<br>Česká Republika</p>
+            </address>
+            <p><a href="tel:+420773226871">+420 773 226 871</a></p>
+            <p class="mb"><a href="mailto:info@nograys.cz">info@nograys.cz</a></p>
+            <div class="socials">
+              <ul>
+                <li>
+                  <a href="https://www.instagram.com/nogray_s" target="_blank" rel="noopener noreferrer">
+                    <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/instagram.svg" alt="Instagram">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61579695230199" target="_blank" rel="noopener noreferrer">
+                    <img src="https://nograys.cz/wp-content/themes/nograys/assets/svg/facebook.svg" alt="Facebook">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <h2 class="secondary">Obchod</h2>
+            <nav>
+              <ul>
+                <li><a href="https://nograys.cz/obchodni-podminky/">Obchodní podmínky</a></li>
+                <li><a href="https://nograys.cz/ochrana-osobnich-udaju/">Zásady ochrany osobních údajů</a></li>
+                <li><a href="https://nograys.cz/co-jsou-soubory-cookies/">Co jsou soubory cookies</a></li>
+                <li><a href="https://nograys.cz/reklamace/">Reklamace a vrácení zboží</a></li>
+                <li><a href="https://nograys.cz/vraceni-zbozi/">Vrácení zboží</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="right">
+          <figure>
+            <img src="https://nograys.cz/wp-content/uploads/2025/05/logo.svg" alt="Logo">
+          </figure>
+        </div>
+      </div>
+      <div class="bottom">
+        <p class="copyright">&copy; 2026 Nogray's.</p>
+        <button type="button" class="clean" id="back-to-top">Nahoru</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======== SCRIPTS ======== -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
