@@ -33,8 +33,8 @@ Poznámka: v tabulce jsou **pouze texty, které vyžadují zásah do kódu** (ha
 - **Intro text** — soubor `partials/components/slideshow/index.php`
 - **Benefity (4 položky)** — nadpisy i texty v `partials/components/slideshow/index.php`
 - **Sekce "Jak aplikovat" (4 kroky)** — celá sekce v `partials/components/how_to/index.php` — obsah se mění na info o produktu
-- **Testimonialy** — na homepage jsou dva existující slidery (pro muže a pro ženy). K nim je potřeba přidat texty (jméno, doba používání, citát). Obsah bude doplněn.
-- **Produktové karty** — v `partials/components/ours_products/index.php` karty aktuálně zobrazují jen obrázek, nadpis a odkaz. Prosím přidej textový popisek pod každou kartu (texty najdeš v tabulce).
+- **Testimonialy** — na homepage jsou dva existující slidery (pro muže a pro ženy). Každý twentytwenty-container prosím obal do wrapperu `<div class="major-results-block">` a pod něj přidej `<blockquote class="major-results-testimonial">` s citátem, jménem a dobou používání. Wrapper je potřeba proto, aby slider a citát tvořily jeden blok vedle sebe (50% šířka). Aktuální `width: 50%` na `.twentytwenty-wrapper` prosím přesuň na `.major-results-block` a wrapper nastav na `width: auto`. Obsah citátů bude doplněn.
+- **Produktové karty — redesign sekce** — sekce "Naše produkty" v `partials/components/ours_products/index.php` se mění z vertikálních karet (velký obrázek + nadpis) na horizontální layout (obrázek vlevo, text vpravo). Podívej se na mockup `homepage.html` v prohlížeči — nový vzhled je tam vidět. Stávající strukturu (`.ours-products > .categories > .category`) prosím přepiš na novou. Pod každou kartu přidej textový popisek (texty najdeš v tabulce).
 
 ### Produktová stránka — textové změny:
 - **Přejmenovat nadpis v accordionu** — v `partials/product/info/accordion.php` prosím změň "Jak přípravek užívat?" na "Jak tonikum používat?"
@@ -52,7 +52,8 @@ Změny layoutu a nové sekce na stránce produktu.
 ### Layout:
 - **Předělat galerii produktu** — aktuálně jsou thumby pod hlavním obrázkem na plnou šířku (588px pod sebou). Prosím předělej na kompaktní layout: velký čtvercový obrázek nahoře + malé čtverečky (80px, border-radius 15px) v řadě pod ním. Klik na thumb změní hlavní obrázek — v `product.js` zatím žádný klik handler na thumby není. Sticky přehoď z `.product-info` na `.product-gallery` (text vpravo je teď delší než galerie). Mobilní Swiper galerie zůstává beze změny.
 - **Gap a šířka** — prosím nastav gap mezi galerií a pravou částí na 80px a max-width pravé části (`.product-info`) na 650px.
-- **Doprava — vytáhnout z accordionu** — info o dopravě prosím přesuň z accordionu ven, aby bylo viditelné přímo bez kliknutí. Text "ℹ️ Při nákupu 2 a více kusů doprava zdarma." je aktuálně řešený CSS snippetem přes `::after` pseudo-element na `.add-to-cart-section`. Prosím přesuň ho přímo do PHP šablony a ten CSS snippet pak zrušíme.
+- **Doprava — vytáhnout z accordionu** — info o dopravě prosím přesuň z accordionu ven, aby bylo viditelné přímo bez kliknutí. Zároveň **odstraň položku "Doprava" z akordeónu** (v `accordion.php` z pole `$accordion_items`), aby se info nezobrazovalo dvakrát. Text "ℹ️ Při nákupu 2 a více kusů doprava zdarma." je aktuálně řešený CSS snippetem přes `::after` pseudo-element na `.add-to-cart-section`. Prosím přesuň ho přímo do PHP šablony a ten CSS snippet pak zrušíme.
+- **Platební ikony** — pod informace o dopravě přidej ikony platebních metod (Apple Pay, Google Pay, Mastercard, Visa) s popiskem "Přijímáme". SVG ikony najdeš v mockupu `index.html` — hledej `<div class="payment-icons">` (inline SVG v HTML). Styly pro `.payment-methods` a `.payment-icons` jsou v inline `<style>` bloku v `<head>` mockupu. Pořadí v sekci: nejdřív text o doručení a seznam (Zásilkovna, DPD), pak platební ikony na konci.
 
 ### Nové sekce:
 - **Porovnání** — nadpis "Věříme, že nejlepší je přirozenost", textový blok a fotka (bude doplněna)
