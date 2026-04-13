@@ -10,6 +10,11 @@ html, body {
   overflow-x: clip;
 }
 
+/* h3.secondary line-height fix */
+h3.secondary {
+  line-height: var(--line-height-33);
+}
+
 /* Accordion text: ensure 16px in product info */
 .accordion-content-inner,
 .accordion-content-inner p {
