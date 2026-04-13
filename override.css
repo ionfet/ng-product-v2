@@ -10,6 +10,13 @@ html, body {
   overflow-x: clip;
 }
 
+/* Accordion text: ensure 16px in product info */
+.accordion-content-inner,
+.accordion-content-inner p {
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-25);
+}
+
 /* Shipping info: visual separation from add-to-cart */
 .shipping-info {
   padding-top: var(--spacing-30);
