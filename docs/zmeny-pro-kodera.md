@@ -1,6 +1,6 @@
 # Poznámka
 
-Designové úpravy (HTML/CSS) jsme připravili v naší lokální verzi a pushnuli na git. Soubory `homepage.html` a `index.html` (produktová stránka) slouží jako **vizuální mockup** — otevři si je v prohlížeči, abys viděl, jak má výsledek vypadat. Nejsou to 1:1 kopie WordPress šablon, takže prosím nekopíruj kód přímo, ale implementuj změny v rámci existujících PHP šablon tématu.
+Designové úpravy (HTML/CSS) jsme připravili v naší lokální verzi a pushnuli na git. Soubory `homepage.html` (homepage), `index.html` (produktová stránka) a `navod.html` (rozcestník návodu) slouží jako **vizuální mockup** — otevři si je v prohlížeči, abys viděl, jak má výsledek vypadat. Nejsou to 1:1 kopie WordPress šablon, takže prosím nekopíruj kód přímo, ale implementuj změny v rámci existujících PHP šablon tématu.
 
 ---
 
@@ -117,6 +117,6 @@ Potřebujeme novou stránku "Návod", která slouží jako rozcestník na dvě p
 
 ## Co je potřeba
 
-1. **Vytvořit šablonu rozcestníku** — stránka `/navod/` s dvěma kartami odkazujícími na podstránky. Design podobný sekci "Naše produkty" na homepage (dvě karty vedle sebe).
-2. **Vytvořit šablonu podstránky** — šablona pro návod, kde bude obsah editovatelný přes WP admin. Obsah dodáme.
-3. **Přidat do navigace** — odkaz "Návod" do hlavního menu.
+1. **Vytvořit šablonu rozcestníku** — stránka `/navod/` se dvěma kartami. Použij stejnou komponentu jako sekce "Naše produkty" na homepage (`.ours-products`, `.categories`, `.category`). Vizuální mockup je v souboru `navod.html` — otevři si ho v prohlížeči. Nadpis "Návod k použití" + krátký popis nahoře, pod tím dvě karty s obrázky produktů a odkazy na podstránky.
+2. **Podstránky vytvoříme sami** — podstránky `/navod/pro-muze/` a `/navod/pro-zeny/` si založíme ve WordPressu jako běžné stránky s textovým obsahem. Odkazy na kartách nastavíme, až budou podstránky hotové.
+3. **Přidat do navigace** — odkaz "Návod" do hlavního menu (za "Náš produkt").
