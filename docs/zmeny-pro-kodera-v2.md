@@ -48,7 +48,7 @@ Prosím nastavit gap mezi  `.product-gallery` a `.product-info` na 80px. Max-wid
 
 ### Volba varianty
 
-Nadále budeme mít samostatné produkty pro muže a pro ženy (viz sekce Katalog produktů níže), takže volba varianty (`.variation-selection` s dropdownem "Pro muže / Pro ženy") na stránce produktu už nedává smysl. Prosím tento prvek **skrýt přes CSS** (`display: none`) — neodstraňovat ho z DOM, ať zůstává funkční jako fallback pro WooCommerce formulář.
+Budeme mít samostatné produkty pro muže a pro ženy (viz sekce Katalog produktů níže), ale ještě nevíme, jestli volbu varianty (`.variation-selection` s dropdownem) budeme dál využívat. Prozatím prosím tento prvek **skrýt přes CSS** (`display: none`) — neodstraňovat ho z DOM, ať zůstává funkční pro WooCommerce formulář, kdybychom se ho rozhodli vrátit.
 
 ### Doprava a platba
 
