@@ -83,6 +83,16 @@ h3.secondary {
   }
 }
 
+/* Product layout: gap between gallery and info */
+.product .product-layout {
+  gap: var(--spacing-80);
+}
+
+/* Skrýt volbu varianty (zůstává v DOM kvůli WooCommerce formuláři) */
+.product .product-layout .product-info .add-to-cart-section .variations .variation-row .variation-selection {
+  display: none !important;
+}
+
 /* Product gallery: compact layout with square main image + small thumbnail row */
 .product .product-layout .product-gallery .main-image {
   height: auto !important;
