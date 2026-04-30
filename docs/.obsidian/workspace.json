@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "28ee0aee8c6f5851",
+    "type": "split",
+    "children": [
+      {
+        "id": "2957bf58c0dec239",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5032db5e906b946",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Nograys-upravy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Nograys-upravy"
+            }
+          },
+          {
+            "id": "11e2586172ed3cd5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Nograys-upravy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Nograys-upravy"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "340afe4ffd6f85b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "25a5d5589461b336",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b73050ce910dbeb3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ed3b8ebe3e09205a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8e1e4f90dc95b7d4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9b8d1a1624a70ae7",
+    "type": "split",
+    "children": [
+      {
+        "id": "66dc7832c1b2ee9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9e6b4ab5ec48e18f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "zmeny-pro-kodera-v2.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for zmeny-pro-kodera-v2"
+            }
+          },
+          {
+            "id": "6d0858612a8bd32a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "zmeny-pro-kodera-v2.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from zmeny-pro-kodera-v2"
+            }
+          },
+          {
+            "id": "60a52df0faa95f49",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "240bae25632752ac",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "88a9a07deb68e4b1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "zmeny-pro-kodera-v2.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of zmeny-pro-kodera-v2"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "11e2586172ed3cd5",
+  "lastOpenFiles": [
+    "zmeny-pro-kodera.md",
+    "produkt-02.jpeg",
+    "Nograys-upravy.md",
+    "produkt-02.jpg",
+    "nograys-upravy.pdf",
+    "Nogray's text - new - Nogray's text - new - zmeny-textu-kompletni.csv",
+    "pokladna.jpeg",
+    "pokladna.jpg",
+    "CleanShot 2026-04-13 at 13.08.22@2x.jpg",
+    "navod-01.jpeg",
+    "navod-01.jpg",
+    "home-03.jpeg",
+    "home-02.jpeg",
+    "home-01.jpeg"
+  ]
+}

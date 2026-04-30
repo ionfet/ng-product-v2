@@ -1,8 +1,8 @@
-# Změny pro implementaci
+# Změny
 
 Připravil jsem statické HTML stránky — slouží jako vizuální reference. Pokud ti tenhle formát nevyhovuje a preferuješ Figmu, dej vědět a připravím to tam.
 
-Prosím, všechny změny nejdřív implementuj na vývojové verzi webu, ať to můžeme společně projít a schválit před nasazením na produkci.
+Prosím, všechny změny nejdřív implementuj na vývojové verzi webu, ať to můžeme predtim otestovat
 
 - [Homepage](https://ionfet.github.io/ng-product-v2/homepage.html)
 - [Produktová stránka](https://ionfet.github.io/ng-product-v2/)
@@ -25,7 +25,7 @@ Drobné úpravy stylů, které se projeví napříč webem.
 
 # 2. Výměna textů
 
-Na webu je potřeba vyměnit hardcoded texty v PHP šablonách podle připravené tabulky v Google Sheets. V tabulce jsou pouze texty vyžadující zásah do kódu — texty editovatelné přes WP admin (produkt, klíčové složky, výsledky, návod k použití) si upravíme sami.
+Na webu je potřeba vyměnit hardcoded texty podle připravené tabulky. V tabulce jsou pouze texty vyžadující zásah do kódu — texty editovatelné přes WP admin si upravíme sami.
 
 Tabulka s novými texty: [Google Sheets](https://docs.google.com/spreadsheets/d/1x1CBxvh0zLiE4-sI7ABJWMZ3kmI3iUov0Y40gBqoPzs/edit?usp=sharing)
 
@@ -37,7 +37,7 @@ Vizuální reference: [ODKAZ](https://ionfet.github.io/ng-product-v2/)
 
 ### Hero sekce
 
-Aktuálně jsou thumby pod hlavním obrázkem na plnou šířku (588px pod sebou). Prosím předělat layout: velký obrázek nahoře + malé thumbnaily (80px, border-radius 15px) v řadě pod ním. Klik na thumbnail by měl změnit hlavní obrázek.
+Aktuálně jsou fotky pod hlavním obrázkem na plnou šířku (588px pod sebou). Prosím upravit layout: velký obrázek nahoře + malé thumbnaily (80px, border-radius 15px) v řadě pod ním. Klik na thumbnail by měl změnit hlavní obrázek.
 
 Sticky pozici prosím přehodit z `.product-info` na `.product-gallery` (text vpravo je teď delší než galerie). Mobilní Swiper galerie zůstává beze změny.
 
@@ -48,15 +48,15 @@ Prosím nastavit gap mezi  `.product-gallery` a `.product-info` na 80px. Max-wid
 
 ### Volba varianty
 
-Budeme mít samostatné produkty pro muže a pro ženy (viz sekce Katalog produktů níže), ale ještě nevíme, jestli volbu varianty (`.variation-selection` s dropdownem) budeme dál využívat. Prozatím prosím tento prvek **skrýt přes CSS** (`display: none`) — neodstraňovat ho z DOM, ať zůstává funkční pro WooCommerce formulář, kdybychom se ho rozhodli vrátit.
+Budeme mít samostatné produkty pro muže a pro ženy (viz sekce Katalog produktů níže), ale ještě nevíme, jestli volbu varianty (`.variation-selection` s dropdownem) budeme dál využívat. Prozatím prosím tento prvek skrýt, ať zůstává funkční, kdybychom se ho rozhodli vrátit.
 
 ### Doprava a platba
 
-Info o dopravě je aktuálně schované v akordeónu. Prosím přesunout ven, aby bylo viditelné přímo pod tlačítkem "Přidat do košíku" — bez nutnosti klikání. Položku "Doprava" z akordeónu pak prosím smazat, aby se info nezobrazovalo dvakrát.
+Info o dopravě je aktuálně schované v akordeónu. Prosím přesunout ven, aby bylo viditelné bez nutnosti klikání. Položku "Doprava" z akordeónu pak prosím smazat, aby se info nezobrazovalo dvakrát.
 
-Banner **"ℹ️ Při nákupu 2+ kusů doprava zdarma"** je aktuálně řešený přes CSS `::after` pseudo-element na `.add-to-cart-section`. Prosím přesunout do skutečného HTML elementu (např. `<div class="free-shipping-banner">`) přímo v PHP šabloně, hned za `.add-to-cart-section`. CSS přesunout z `::after` na `.free-shipping-banner`.
+Banner **"ℹ️ Při nákupu 2+ kusů doprava zdarma"** je aktuálně řešený přes CSS `::after` pseudo-element na `.add-to-cart-section`. Prosím přesunout do skutečného HTML elementu hned za `.add-to-cart-section`.
 
-Pod banner prosím přesunout ikony platebních metod (Apple Pay, Google Pay, Mastercard, Visa) s popiskem "Přijímáme". SVG ikon jsou v mockupu [Produktová stránka](https://ionfet.github.io/ng-product-v2/).
+Pod banner prosím přidat ikony platebních metod (Apple Pay, Google Pay, Mastercard, Visa) s popiskem "Přijímáme". SVG ikon jsou v mockupu [Produktová stránka](https://ionfet.github.io/ng-product-v2/).
 
 Pořadí v sekci `.product-info`:
 1. Add to cart sekce (cena + tlačítko)
