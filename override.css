@@ -10,16 +10,6 @@ html, body {
   overflow-x: clip;
 }
 
-/* Override remote theme: remove extra padding-top on body with top bar */
-body.has-top-bar {
-  padding-top: 120px;
-}
-
-/* Override remote theme: reduce article spacing */
-article:not(:last-child) {
-  margin-bottom: 40px;
-}
-
 /* h3.secondary line-height fix */
 h3.secondary {
   line-height: var(--line-height-33);
@@ -533,7 +523,7 @@ h3.secondary {
   color: #fff;
   font-size: var(--font-size-16, 16px);
   font-family: inherit;
-  padding: 10px 38px 14px 16px;
+  padding: 10px 38px 10px 16px;
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
