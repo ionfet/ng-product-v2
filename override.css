@@ -788,6 +788,13 @@ h3.secondary {
   }
 }
 
+/* Remove top padding on .home.has-top-bar */
+@media (max-width: 1440px) {
+  .home.has-top-bar {
+    padding-top: 0;
+  }
+}
+
 /* Hero photo: square (1:1) on mobile */
 @media (max-width: 640px) {
   .hero__video-container .video-sidebar img {
