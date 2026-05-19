@@ -787,3 +787,11 @@ h3.secondary {
     min-width: 0;
   }
 }
+
+/* Hero photo: square (1:1) on mobile */
+@media (max-width: 640px) {
+  .hero__video-container .video-sidebar img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
